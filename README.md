@@ -166,10 +166,10 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🚧 Roadmap
 
-- [ ] Add remaining Spectrum components
-- [ ] Implement accessibility features (ARIA, keyboard navigation)
-- [ ] Add component prop validation
-- [ ] Create Storybook integration
-- [ ] Add unit tests
-- [ ] Implement animations and transitions
-- [ ] Add TypeScript support 
+- [ ] 📦 Add remaining Spectrum components
+- [ ] ♿ Implement accessibility features (ARIA, keyboard navigation)
+- [ ] ✅ Add component prop validation
+- [ ] 📚 Create Storybook integration
+- [ ] 🧪 Add unit tests
+- [ ] ✨ Implement animations and transitions
+- [ ] 🔷 Add TypeScript support 
