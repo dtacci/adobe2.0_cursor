@@ -146,6 +146,10 @@ body {
   font-size: 12px;
   color: var(--storybook-text-muted);
   font-weight: 600;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  height: 24px;
 }
 
 .control-select {
@@ -157,6 +161,10 @@ body {
   color: var(--storybook-text);
   cursor: pointer;
   transition: border-color 0.2s ease;
+  height: 24px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
 }
 
 .control-select:hover {
