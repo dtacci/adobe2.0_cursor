@@ -6,7 +6,7 @@ A faithful recreation of Adobe's Spectrum Design System components built with Re
 
 **[View Live Demo →](https://adobe2-0-cursor.vercel.app)**
 
-Experience the components in action with our interactive demo site featuring all available components, themes, and scales.
+Experience the components in action with our interactive demo site featuring all available components, themes, and scales. Test the complete Adobe Spectrum component library with real-time theme switching and responsive design.
 
 ## 🎨 Features
 
