@@ -2,6 +2,12 @@
 
 A faithful recreation of Adobe's Spectrum Design System components built with React. This project provides a comprehensive library of Spectrum components with proper styling, theming, and interactive functionality.
 
+## 🌐 Live Demo
+
+**[View Live Demo →](https://adobe2-0-cursor.vercel.app)**
+
+Experience the components in action with our interactive demo site featuring all available components, themes, and scales.
+
 ## 🎨 Features
 
 - **Complete Spectrum Component Library** - Faithful recreations of Adobe Spectrum components
