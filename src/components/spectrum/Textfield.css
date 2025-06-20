@@ -200,4 +200,45 @@
 
 .spectrum-textfield-charactercount--over-limit {
   color: var(--spectrum-text-color-negative);
+}
+
+/* Read-only state */
+.spectrum-textfield--readonly .spectrum-textfield-input {
+  background-color: var(--spectrum-gray-100);
+  border-color: var(--spectrum-gray-300);
+  cursor: default;
+}
+
+[data-theme="dark"] .spectrum-textfield--readonly .spectrum-textfield-input {
+  background-color: var(--spectrum-gray-700);
+  border-color: var(--spectrum-gray-500);
+}
+
+/* Scale adjustments */
+[data-scale="large"] .spectrum-textfield--size-small .spectrum-textfield-input {
+  height: var(--spectrum-component-height-100);
+  font-size: var(--spectrum-font-size-100);
+  padding: 0 var(--spectrum-component-edge-to-text-100);
+}
+
+[data-scale="large"] .spectrum-textfield-input {
+  height: var(--spectrum-component-height-200);
+  font-size: var(--spectrum-font-size-200);
+  padding: 0 var(--spectrum-component-edge-to-text-200);
+}
+
+[data-scale="large"] .spectrum-textfield--size-large .spectrum-textfield-input {
+  height: var(--spectrum-component-height-300);
+  font-size: var(--spectrum-font-size-300);
+  padding: 0 var(--spectrum-component-edge-to-text-300);
+}
+
+[data-scale="large"] .spectrum-textfield-label {
+  font-size: var(--spectrum-font-size-200);
+  margin-bottom: var(--spectrum-spacing-100);
+}
+
+[data-scale="large"] .spectrum-textfield-help-text {
+  font-size: var(--spectrum-font-size-100);
+  margin-top: var(--spectrum-spacing-75);
 } 

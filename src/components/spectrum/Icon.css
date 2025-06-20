@@ -166,6 +166,45 @@
 /* High contrast mode support */
 @media (forced-colors: active) {
   .spectrum-icon {
-    forced-color-adjust: auto;
+    color: ButtonText;
+    fill: ButtonText;
   }
+  
+  .spectrum-icon--color-positive,
+  .spectrum-icon--color-negative,
+  .spectrum-icon--color-notice,
+  .spectrum-icon--color-info,
+  .spectrum-icon--color-accent {
+    color: Highlight;
+  }
+  
+  .spectrum-icon--color-disabled {
+    color: GrayText;
+  }
+}
+
+/* Scale adjustments */
+[data-scale="large"] .spectrum-icon--size-s {
+  width: var(--spectrum-icon-size-m);
+  height: var(--spectrum-icon-size-m);
+}
+
+[data-scale="large"] .spectrum-icon--size-m {
+  width: var(--spectrum-icon-size-l);
+  height: var(--spectrum-icon-size-l);
+}
+
+[data-scale="large"] .spectrum-icon--size-l {
+  width: var(--spectrum-icon-size-xl);
+  height: var(--spectrum-icon-size-xl);
+}
+
+[data-scale="large"] .spectrum-icon--size-xl {
+  width: var(--spectrum-icon-size-xxl);
+  height: var(--spectrum-icon-size-xxl);
+}
+
+[data-scale="large"] .spectrum-icon--size-xxl {
+  width: 40px;
+  height: 40px;
 } 

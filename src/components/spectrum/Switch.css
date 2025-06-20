@@ -159,4 +159,45 @@
   100% {
     transform: translateX(0);
   }
+}
+
+/* Scale adjustments */
+[data-scale="large"] .spectrum-switch {
+  font-size: var(--spectrum-font-size-200);
+}
+
+[data-scale="large"] .spectrum-switch--size-s {
+  --spectrum-switch-width: 40px;
+  --spectrum-switch-height: 20px;
+  --spectrum-switch-handle-size: 16px;
+  --spectrum-switch-handle-margin: 2px;
+  --spectrum-switch-border-radius: 10px;
+  font-size: var(--spectrum-font-size-100);
+}
+
+[data-scale="large"] .spectrum-switch--size-m {
+  --spectrum-switch-width: 48px;
+  --spectrum-switch-height: 24px;
+  --spectrum-switch-handle-size: 20px;
+  --spectrum-switch-handle-margin: 2px;
+  --spectrum-switch-border-radius: 12px;
+  font-size: var(--spectrum-font-size-200);
+}
+
+[data-scale="large"] .spectrum-switch--size-l {
+  --spectrum-switch-width: 56px;
+  --spectrum-switch-height: 28px;
+  --spectrum-switch-handle-size: 24px;
+  --spectrum-switch-handle-margin: 2px;
+  --spectrum-switch-border-radius: 14px;
+  font-size: var(--spectrum-font-size-300);
+}
+
+[data-scale="large"] .spectrum-switch--size-xl {
+  --spectrum-switch-width: 64px;
+  --spectrum-switch-height: 32px;
+  --spectrum-switch-handle-size: 28px;
+  --spectrum-switch-handle-margin: 2px;
+  --spectrum-switch-border-radius: 16px;
+  font-size: var(--spectrum-font-size-400);
 } 

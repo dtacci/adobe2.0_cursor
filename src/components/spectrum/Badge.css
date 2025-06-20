@@ -137,4 +137,37 @@
     border-color: ButtonText;
     color: ButtonFace;
   }
+}
+
+/* Disabled state */
+.spectrum-badge.is-disabled {
+  opacity: var(--spectrum-badge-opacity-disabled, 0.4);
+  cursor: default;
+}
+
+/* Fixed positioning (for notifications, etc.) */
+.spectrum-badge--fixed {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  z-index: 1;
+}
+
+/* Scale adjustments */
+[data-scale="large"] .spectrum-badge--size-small {
+  height: var(--spectrum-component-height-100);
+  padding: 0 var(--spectrum-spacing-100);
+  font-size: var(--spectrum-font-size-100);
+}
+
+[data-scale="large"] .spectrum-badge {
+  height: var(--spectrum-component-height-200);
+  padding: 0 var(--spectrum-spacing-200);
+  font-size: var(--spectrum-font-size-200);
+}
+
+[data-scale="large"] .spectrum-badge--size-large {
+  height: var(--spectrum-component-height-300);
+  padding: 0 var(--spectrum-spacing-300);
+  font-size: var(--spectrum-font-size-300);
 } 

@@ -229,6 +229,7 @@
   --spectrum-component-edge-to-text-100: 12px;
   --spectrum-component-edge-to-text-200: 16px;
   --spectrum-component-edge-to-text-300: 20px;
+  --spectrum-component-edge-to-text-400: 24px;
   
   /* Field Widths */
   --spectrum-field-width: 240px;
@@ -303,10 +304,11 @@
   --spectrum-background-base-color: var(--spectrum-gray-50);
 
   /* Component Edge to Text (for buttons) */
-  --spectrum-component-pill-edge-to-text-75: 11px;
-  --spectrum-component-pill-edge-to-text-100: 15px;
-  --spectrum-component-pill-edge-to-text-200: 19px;
-  --spectrum-component-pill-edge-to-text-300: 23px;
+  --spectrum-component-pill-edge-to-text-75: 10px;
+  --spectrum-component-pill-edge-to-text-100: 14px;
+  --spectrum-component-pill-edge-to-text-200: 18px;
+  --spectrum-component-pill-edge-to-text-300: 22px;
+  --spectrum-component-pill-edge-to-text-400: 26px;
 
   /* Text to Visual (icon spacing) */
   --spectrum-text-to-visual-75: 6px;

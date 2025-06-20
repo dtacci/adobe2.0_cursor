@@ -182,4 +182,58 @@
 .spectrum-radio--readonly input[type="radio"]:checked + .spectrum-radio-button {
   background-color: var(--spectrum-gray-400);
   border-color: var(--spectrum-gray-400);
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .spectrum-radio {
+  color: var(--spectrum-gray-200);
+}
+
+[data-theme="dark"] .spectrum-radio-button {
+  background-color: var(--spectrum-gray-700);
+  border-color: var(--spectrum-gray-400);
+}
+
+[data-theme="dark"] .spectrum-radio input[type="radio"]:checked + .spectrum-radio-button {
+  background-color: var(--spectrum-blue-500);
+  border-color: var(--spectrum-blue-500);
+}
+
+[data-theme="dark"] .spectrum-radio-label {
+  color: var(--spectrum-gray-200);
+}
+
+/* Scale adjustments */
+[data-scale="large"] .spectrum-radio {
+  font-size: var(--spectrum-font-size-200);
+}
+
+[data-scale="large"] .spectrum-radio--size-small .spectrum-radio-button {
+  width: var(--spectrum-radio-button-control-size-medium);
+  height: var(--spectrum-radio-button-control-size-medium);
+}
+
+[data-scale="large"] .spectrum-radio--size-small .spectrum-radio-button-dot {
+  width: calc(var(--spectrum-radio-button-control-size-medium) / 2);
+  height: calc(var(--spectrum-radio-button-control-size-medium) / 2);
+}
+
+[data-scale="large"] .spectrum-radio-button {
+  width: var(--spectrum-radio-button-control-size-large);
+  height: var(--spectrum-radio-button-control-size-large);
+}
+
+[data-scale="large"] .spectrum-radio-button-dot {
+  width: calc(var(--spectrum-radio-button-control-size-large) / 2);
+  height: calc(var(--spectrum-radio-button-control-size-large) / 2);
+}
+
+[data-scale="large"] .spectrum-radio--size-large .spectrum-radio-button {
+  width: 24px;
+  height: 24px;
+}
+
+[data-scale="large"] .spectrum-radio--size-large .spectrum-radio-button-dot {
+  width: 12px;
+  height: 12px;
 } 

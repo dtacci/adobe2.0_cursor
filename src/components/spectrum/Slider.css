@@ -171,4 +171,37 @@
   height: var(--spectrum-slider-tick-height, 8px);
   background-color: var(--spectrum-slider-tick-color, var(--spectrum-gray-400));
   transform: translateY(-50%);
+}
+
+/* Scale adjustments */
+[data-scale="large"] .spectrum-slider {
+  --spectrum-slider-height: 48px;
+  --spectrum-slider-handle-size: 24px;
+  --spectrum-slider-track-height: 3px;
+}
+
+[data-scale="large"] .spectrum-slider--size-s {
+  --spectrum-slider-height: 32px;
+  --spectrum-slider-handle-size: 20px;
+  --spectrum-slider-track-height: 2px;
+}
+
+[data-scale="large"] .spectrum-slider--size-l {
+  --spectrum-slider-height: 48px;
+  --spectrum-slider-handle-size: 28px;
+  --spectrum-slider-track-height: 4px;
+}
+
+[data-scale="large"] .spectrum-slider--size-xl {
+  --spectrum-slider-height: 56px;
+  --spectrum-slider-handle-size: 32px;
+  --spectrum-slider-track-height: 5px;
+}
+
+[data-scale="large"] .spectrum-slider-label {
+  font-size: var(--spectrum-font-size-200);
+}
+
+[data-scale="large"] .spectrum-slider-value {
+  font-size: var(--spectrum-font-size-200);
 } 

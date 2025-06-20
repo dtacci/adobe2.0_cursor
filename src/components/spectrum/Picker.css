@@ -61,6 +61,8 @@
   box-shadow: var(--spectrum-drop-shadow-y);
   max-height: 200px;
   overflow-y: auto;
+  max-width: 320px;
+  min-width: 160px;
 }
 
 .spectrum-picker-listbox {
@@ -195,4 +197,45 @@
   right: var(--spectrum-spacing-200);
   width: 14px;
   height: 14px;
+}
+
+/* Scale adjustments */
+[data-scale="large"] .spectrum-picker--size-small .spectrum-picker-button {
+  height: var(--spectrum-component-height-100);
+  font-size: var(--spectrum-font-size-100);
+  padding: 0 var(--spectrum-component-height-100) 0 var(--spectrum-component-edge-to-text-100);
+}
+
+[data-scale="large"] .spectrum-picker-button {
+  height: var(--spectrum-component-height-200);
+  font-size: var(--spectrum-font-size-200);
+  padding: 0 var(--spectrum-component-height-200) 0 var(--spectrum-component-edge-to-text-200);
+}
+
+[data-scale="large"] .spectrum-picker--size-large .spectrum-picker-button {
+  height: var(--spectrum-component-height-300);
+  font-size: var(--spectrum-font-size-300);
+  padding: 0 var(--spectrum-component-height-300) 0 var(--spectrum-component-edge-to-text-300);
+}
+
+[data-scale="large"] .spectrum-picker-label {
+  font-size: var(--spectrum-font-size-200);
+}
+
+[data-scale="large"] .spectrum-picker--size-small .spectrum-picker-icon {
+  right: var(--spectrum-spacing-100);
+  width: 12px;
+  height: 12px;
+}
+
+[data-scale="large"] .spectrum-picker-icon {
+  right: var(--spectrum-spacing-200);
+  width: 16px;
+  height: 16px;
+}
+
+[data-scale="large"] .spectrum-picker--size-large .spectrum-picker-icon {
+  right: var(--spectrum-spacing-300);
+  width: 18px;
+  height: 18px;
 } 
