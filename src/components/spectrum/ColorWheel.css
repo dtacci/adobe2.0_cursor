@@ -1,0 +1,163 @@
+.spectrum-colorwheel {
+  position: relative;
+  display: inline-block;
+  width: var(--spectrum-colorwheel-width, 160px);
+  height: var(--spectrum-colorwheel-height, 160px);
+}
+
+.spectrum-colorwheel-gradient {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: var(--spectrum-border-width-100) solid var(--spectrum-neutral-border-color-default);
+  cursor: crosshair;
+  user-select: none;
+  transition: all var(--spectrum-animation-duration-100) ease-in-out;
+  outline: none;
+  overflow: hidden;
+}
+
+.spectrum-colorwheel-gradient:before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+  border-radius: 50%;
+  background: var(--spectrum-neutral-background-color-default);
+  z-index: 1;
+}
+
+.spectrum-colorwheel-handle {
+  position: absolute;
+  width: var(--spectrum-colorwheel-handle-size, 16px);
+  height: var(--spectrum-colorwheel-handle-size, 16px);
+  border: var(--spectrum-border-width-200) solid var(--spectrum-white);
+  border-radius: 50%;
+  box-shadow: 
+    0 0 0 1px rgba(0, 0, 0, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all var(--spectrum-animation-duration-100) ease-in-out;
+  z-index: 2;
+}
+
+/* Hover state */
+.spectrum-colorwheel:hover .spectrum-colorwheel-gradient {
+  border-color: var(--spectrum-neutral-border-color-hover);
+}
+
+.spectrum-colorwheel:hover .spectrum-colorwheel-handle {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 
+    0 0 0 1px rgba(0, 0, 0, 0.4),
+    0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Focus state */
+.spectrum-colorwheel-gradient:focus {
+  border-color: var(--spectrum-accent-border-color-focus);
+  box-shadow: 0 0 0 1px var(--spectrum-accent-border-color-focus);
+}
+
+.spectrum-colorwheel-gradient:focus .spectrum-colorwheel-handle {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 
+    0 0 0 2px var(--spectrum-white),
+    0 0 0 3px var(--spectrum-accent-border-color-focus),
+    0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Active/Dragging state */
+.spectrum-colorwheel--dragging .spectrum-colorwheel-gradient {
+  cursor: grabbing;
+}
+
+.spectrum-colorwheel--dragging .spectrum-colorwheel-handle {
+  transform: translate(-50%, -50%) scale(1.2);
+  box-shadow: 
+    0 0 0 1px rgba(0, 0, 0, 0.4),
+    0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Disabled state */
+.spectrum-colorwheel--disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.spectrum-colorwheel--disabled .spectrum-colorwheel-gradient {
+  cursor: not-allowed;
+  border-color: var(--spectrum-disabled-border-color);
+}
+
+.spectrum-colorwheel--disabled .spectrum-colorwheel-handle {
+  box-shadow: 
+    0 0 0 1px var(--spectrum-disabled-border-color),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Size variants */
+.spectrum-colorwheel--size-small {
+  width: var(--spectrum-colorwheel-width-small, 120px);
+  height: var(--spectrum-colorwheel-height-small, 120px);
+}
+
+.spectrum-colorwheel--size-small .spectrum-colorwheel-handle {
+  width: var(--spectrum-colorwheel-handle-size-small, 12px);
+  height: var(--spectrum-colorwheel-handle-size-small, 12px);
+}
+
+.spectrum-colorwheel--size-large {
+  width: var(--spectrum-colorwheel-width-large, 200px);
+  height: var(--spectrum-colorwheel-height-large, 200px);
+}
+
+.spectrum-colorwheel--size-large .spectrum-colorwheel-handle {
+  width: var(--spectrum-colorwheel-handle-size-large, 20px);
+  height: var(--spectrum-colorwheel-handle-size-large, 20px);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .spectrum-colorwheel-gradient {
+    border-width: var(--spectrum-border-width-200);
+  }
+  
+  .spectrum-colorwheel-handle {
+    border-width: var(--spectrum-border-width-300);
+    box-shadow: 
+      0 0 0 2px rgba(0, 0, 0, 0.8),
+      0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .spectrum-colorwheel-gradient,
+  .spectrum-colorwheel-handle {
+    transition: none;
+  }
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .spectrum-colorwheel-gradient:before,
+.spectrum-theme-dark .spectrum-colorwheel-gradient:before {
+  background: var(--spectrum-gray-900);
+}
+
+/* CSS custom properties for theming */
+:root {
+  --spectrum-colorwheel-width: 160px;
+  --spectrum-colorwheel-height: 160px;
+  --spectrum-colorwheel-width-small: 120px;
+  --spectrum-colorwheel-height-small: 120px;
+  --spectrum-colorwheel-width-large: 200px;
+  --spectrum-colorwheel-height-large: 200px;
+  --spectrum-colorwheel-handle-size: 16px;
+  --spectrum-colorwheel-handle-size-small: 12px;
+  --spectrum-colorwheel-handle-size-large: 20px;
+}
