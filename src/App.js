@@ -3,6 +3,10 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useParams } from 'rea
 import Sidebar from './components/Sidebar';
 import ComponentView from './components/ComponentView';
 import HomePage from './pages/HomePage';
+import DesignTokensPage from './pages/DesignTokensPage';
+import AccessibilityPage from './pages/AccessibilityPage';
+import GettingStartedPage from './pages/GettingStartedPage';
+import FoundationsPage from './pages/FoundationsPage';
 import Avatar from './components/spectrum/Avatar';
 import './styles/spectrum-tokens.css';
 import './styles/App.css';
@@ -200,6 +204,10 @@ function App() {
           <main className="main-content">
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/getting-started" element={<GettingStartedPage />} />
+              <Route path="/design-tokens" element={<DesignTokensPage />} />
+              <Route path="/accessibility" element={<AccessibilityPage />} />
+              <Route path="/foundations" element={<FoundationsPage />} />
               <Route 
                 path="/component/:componentName" 
                 element={
