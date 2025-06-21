@@ -1,0 +1,24 @@
+.buggy-component {
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.buggy-component h2 {
+  margin-top: 0;
+}
+
+.buggy-component div {
+  padding: 8px;
+  margin: 4px 0;
+  cursor: pointer;
+  border: 1px solid #eee;
+}
+
+.buggy-component div:hover {
+  background-color: #f5f5f5;
+}
+
+.buggy-component span {
+  margin-right: 16px;
+} 
