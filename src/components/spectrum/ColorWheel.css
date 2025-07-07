@@ -1,0 +1,224 @@
+.spectrum-colorwheel {
+  position: relative;
+  display: inline-block;
+  width: var(--spectrum-colorwheel-width);
+  height: var(--spectrum-colorwheel-height);
+}
+
+.spectrum-colorwheel-wheel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: var(--spectrum-border-width-100) solid var(--spectrum-neutral-border-color-default);
+  cursor: crosshair;
+  user-select: none;
+  transition: border-color var(--spectrum-animation-duration-100) ease-in-out;
+  outline: none;
+  
+  /* Create the color wheel gradient */
+  background: conic-gradient(
+    from 0deg,
+    hsl(0, 100%, 50%),
+    hsl(30, 100%, 50%),
+    hsl(60, 100%, 50%),
+    hsl(90, 100%, 50%),
+    hsl(120, 100%, 50%),
+    hsl(150, 100%, 50%),
+    hsl(180, 100%, 50%),
+    hsl(210, 100%, 50%),
+    hsl(240, 100%, 50%),
+    hsl(270, 100%, 50%),
+    hsl(300, 100%, 50%),
+    hsl(330, 100%, 50%),
+    hsl(360, 100%, 50%)
+  );
+  
+  /* Add radial gradient for saturation */
+  background-image: radial-gradient(
+    circle at center,
+    transparent 0%,
+    transparent 10%,
+    rgba(255, 255, 255, 0.1) 40%,
+    rgba(255, 255, 255, 0.8) 90%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.spectrum-colorwheel-handle {
+  position: absolute;
+  width: var(--spectrum-colorwheel-handle-size);
+  height: var(--spectrum-colorwheel-handle-size);
+  border: var(--spectrum-border-width-200) solid var(--spectrum-white);
+  border-radius: 50%;
+  box-shadow: 
+    0 0 0 1px rgba(0, 0, 0, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all var(--spectrum-animation-duration-100) ease-in-out;
+  z-index: 1;
+}
+
+/* Hover state */
+.spectrum-colorwheel:hover .spectrum-colorwheel-wheel {
+  border-color: var(--spectrum-neutral-border-color-hover);
+}
+
+.spectrum-colorwheel:hover .spectrum-colorwheel-handle {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Focus state */
+.spectrum-colorwheel-wheel:focus {
+  border-color: var(--spectrum-accent-border-color-focus);
+  box-shadow: 0 0 0 1px var(--spectrum-accent-border-color-focus);
+}
+
+.spectrum-colorwheel-wheel:focus .spectrum-colorwheel-handle {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Active/Dragging state */
+.spectrum-colorwheel--dragging .spectrum-colorwheel-wheel {
+  cursor: grabbing;
+}
+
+.spectrum-colorwheel--dragging .spectrum-colorwheel-handle {
+  transform: translate(-50%, -50%) scale(1.2);
+  box-shadow: 
+    0 0 0 1px rgba(0, 0, 0, 0.4),
+    0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Disabled state */
+.spectrum-colorwheel--disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.spectrum-colorwheel--disabled .spectrum-colorwheel-wheel {
+  cursor: not-allowed;
+  border-color: var(--spectrum-disabled-border-color);
+  filter: grayscale(1);
+}
+
+.spectrum-colorwheel--disabled .spectrum-colorwheel-handle {
+  box-shadow: 
+    0 0 0 1px var(--spectrum-disabled-border-color),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Size variants */
+.spectrum-colorwheel--size-small {
+  width: var(--spectrum-colorwheel-width-small);
+  height: var(--spectrum-colorwheel-height-small);
+}
+
+.spectrum-colorwheel--size-small .spectrum-colorwheel-handle {
+  width: var(--spectrum-colorwheel-handle-size-small);
+  height: var(--spectrum-colorwheel-handle-size-small);
+}
+
+.spectrum-colorwheel--size-medium {
+  width: var(--spectrum-colorwheel-width-medium);
+  height: var(--spectrum-colorwheel-height-medium);
+}
+
+.spectrum-colorwheel--size-medium .spectrum-colorwheel-handle {
+  width: var(--spectrum-colorwheel-handle-size-medium);
+  height: var(--spectrum-colorwheel-handle-size-medium);
+}
+
+.spectrum-colorwheel--size-large {
+  width: var(--spectrum-colorwheel-width-large);
+  height: var(--spectrum-colorwheel-height-large);
+}
+
+.spectrum-colorwheel--size-large .spectrum-colorwheel-handle {
+  width: var(--spectrum-colorwheel-handle-size-large);
+  height: var(--spectrum-colorwheel-handle-size-large);
+}
+
+/* Keyboard navigation indicator */
+.spectrum-colorwheel-wheel:focus-visible {
+  outline: var(--spectrum-focus-ring-thickness) solid var(--spectrum-focus-ring-color);
+  outline-offset: var(--spectrum-focus-ring-gap);
+}
+
+/* Animation for smooth transitions */
+@keyframes spectrum-colorwheel-handle-pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.spectrum-colorwheel-wheel:active .spectrum-colorwheel-handle {
+  animation: spectrum-colorwheel-handle-pulse 0.2s ease-in-out;
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+  .spectrum-colorwheel-wheel {
+    forced-color-adjust: none;
+    background: conic-gradient(
+      from 0deg,
+      ButtonText,
+      ButtonText
+    );
+    border: 2px solid ButtonText;
+  }
+  
+  .spectrum-colorwheel-handle {
+    forced-color-adjust: none;
+    background-color: ButtonFace;
+    border: 2px solid ButtonText;
+  }
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .spectrum-colorwheel-wheel {
+  border-color: var(--spectrum-gray-400);
+}
+
+[data-theme="dark"] .spectrum-colorwheel-handle {
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .spectrum-colorwheel-wheel,
+  .spectrum-colorwheel-handle {
+    transition: none;
+  }
+  
+  .spectrum-colorwheel-wheel:active .spectrum-colorwheel-handle {
+    animation: none;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .spectrum-colorwheel-handle {
+    width: var(--spectrum-colorwheel-handle-size-touch);
+    height: var(--spectrum-colorwheel-handle-size-touch);
+  }
+  
+  .spectrum-colorwheel--size-small .spectrum-colorwheel-handle {
+    width: var(--spectrum-colorwheel-handle-size-small-touch);
+    height: var(--spectrum-colorwheel-handle-size-small-touch);
+  }
+  
+  .spectrum-colorwheel--size-large .spectrum-colorwheel-handle {
+    width: var(--spectrum-colorwheel-handle-size-large-touch);
+    height: var(--spectrum-colorwheel-handle-size-large-touch);
+  }
+}

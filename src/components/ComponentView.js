@@ -14,6 +14,7 @@ import Checkbox from './spectrum/Checkbox';
 import Radio from './spectrum/Radio';
 import ColorField from './spectrum/ColorField';
 import ColorArea from './spectrum/ColorArea';
+import ColorWheel from './spectrum/ColorWheel';
 import Combobox from './spectrum/Combobox';
 import Menu from './spectrum/Menu';
 import Picker from './spectrum/Picker';
@@ -48,6 +49,7 @@ const ComponentView = ({ componentName, theme, scale }) => {
       Radio: "Radio buttons allow users to select a single option from a list of mutually exclusive options. All possible options are exposed up front for users to compare.",
       ColorField: "A color field allows users to enter a color value. It includes a color swatch that shows the current color value.",
       ColorArea: "A color area allows users to visually select a color from a two-dimensional area. It's commonly used as a part of a color picker.",
+      ColorWheel: "A color wheel allows users to select a color from a circular HSV color space. It provides intuitive color selection by combining hue and saturation in a wheel format.",
       Combobox: "A combobox combines a text input with a listbox, allowing users to filter a list of options to items matching a query.",
       Menu: "Menus display a list of actions or options that a user can choose.",
       Picker: "A picker displays a collapsible list of options and allows a user to select one of them.",
@@ -227,6 +229,15 @@ const ComponentView = ({ componentName, theme, scale }) => {
           <ColorArea
             value={props.value || '#ff0000'}
             isDisabled={props.isDisabled || false}
+          />
+        );
+      case 'ColorWheel':
+        return (
+          <ColorWheel
+            value={props.value || { hue: 0, saturation: 100, value: 100 }}
+            disabled={props.isDisabled || false}
+            size={props.size || 'medium'}
+            onChange={(color) => console.log('Color changed:', color)}
           />
         );
       case 'Combobox':
@@ -935,6 +946,71 @@ const ComponentView = ({ componentName, theme, scale }) => {
             />
             Invalid
           </label>
+        </div>,
+        <div key="isDisabled" className="control-item">
+          <label className="control-label">
+            <input 
+              className="control-checkbox"
+              type="checkbox" 
+              checked={props.isDisabled || false} 
+              onChange={(e) => updateProp('isDisabled', e.target.checked)}
+            />
+            Disabled
+          </label>
+        </div>
+      );
+    }
+
+    // ColorWheel controls
+    if (componentName === 'ColorWheel') {
+      controls.push(
+        <div key="size" className="control-item">
+          <label className="control-label">Size</label>
+          <select 
+            className="control-input"
+            value={props.size || 'medium'} 
+            onChange={(e) => updateProp('size', e.target.value)}
+          >
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+          </select>
+        </div>,
+        <div key="hue" className="control-item">
+          <label className="control-label">Hue</label>
+          <input 
+            className="control-input"
+            type="range" 
+            min="0"
+            max="360"
+            value={props.value?.hue || 0} 
+            onChange={(e) => updateProp('value', { ...props.value, hue: parseInt(e.target.value) })}
+          />
+          <span className="control-value">{props.value?.hue || 0}°</span>
+        </div>,
+        <div key="saturation" className="control-item">
+          <label className="control-label">Saturation</label>
+          <input 
+            className="control-input"
+            type="range" 
+            min="0"
+            max="100"
+            value={props.value?.saturation || 100} 
+            onChange={(e) => updateProp('value', { ...props.value, saturation: parseInt(e.target.value) })}
+          />
+          <span className="control-value">{props.value?.saturation || 100}%</span>
+        </div>,
+        <div key="brightness" className="control-item">
+          <label className="control-label">Brightness</label>
+          <input 
+            className="control-input"
+            type="range" 
+            min="0"
+            max="100"
+            value={props.value?.value || 100} 
+            onChange={(e) => updateProp('value', { ...props.value, value: parseInt(e.target.value) })}
+          />
+          <span className="control-value">{props.value?.value || 100}%</span>
         </div>,
         <div key="isDisabled" className="control-item">
           <label className="control-label">

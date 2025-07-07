@@ -258,6 +258,23 @@
   --spectrum-colorarea-handle-size-small: 12px;
   --spectrum-colorarea-handle-size-large: 16px;
   
+  /* Color Wheel Specific */
+  --spectrum-colorwheel-width: 192px;
+  --spectrum-colorwheel-height: 192px;
+  --spectrum-colorwheel-width-small: 144px;
+  --spectrum-colorwheel-height-small: 144px;
+  --spectrum-colorwheel-width-medium: 192px;
+  --spectrum-colorwheel-height-medium: 192px;
+  --spectrum-colorwheel-width-large: 240px;
+  --spectrum-colorwheel-height-large: 240px;
+  --spectrum-colorwheel-handle-size: 14px;
+  --spectrum-colorwheel-handle-size-small: 12px;
+  --spectrum-colorwheel-handle-size-medium: 14px;
+  --spectrum-colorwheel-handle-size-large: 16px;
+  --spectrum-colorwheel-handle-size-touch: 20px;
+  --spectrum-colorwheel-handle-size-small-touch: 18px;
+  --spectrum-colorwheel-handle-size-large-touch: 22px;
+  
   /* Icon Sizes */
   --spectrum-icon-size-s: 12px;
   --spectrum-icon-size-m: 16px;
