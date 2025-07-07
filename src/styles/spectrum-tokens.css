@@ -229,6 +229,14 @@
   --spectrum-component-edge-to-text-100: 12px;
   --spectrum-component-edge-to-text-200: 16px;
   --spectrum-component-edge-to-text-300: 20px;
+  --spectrum-component-edge-to-text-400: 24px;
+  
+  /* Component Pill Edge to Text */
+  --spectrum-component-pill-edge-to-text-75: 8px;
+  --spectrum-component-pill-edge-to-text-100: 12px;
+  --spectrum-component-pill-edge-to-text-200: 16px;
+  --spectrum-component-pill-edge-to-text-300: 20px;
+  --spectrum-component-pill-edge-to-text-400: 24px;
   
   /* Field Widths */
   --spectrum-field-width: 240px;

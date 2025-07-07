@@ -221,4 +221,29 @@
 [data-theme="dark"] .spectrum-button--over-background:active:not(:disabled) {
   background-color: rgba(0, 0, 0, 0.3);
   border-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Scale adjustments */
+[data-scale="large"] .spectrum-button--size-small {
+  height: var(--spectrum-component-height-100);
+  padding: 0 calc(var(--spectrum-component-pill-edge-to-text-100) - var(--spectrum-border-width-200));
+  font-size: var(--spectrum-font-size-100);
+}
+
+[data-scale="large"] .spectrum-button--size-medium {
+  height: var(--spectrum-component-height-200);
+  padding: 0 calc(var(--spectrum-component-pill-edge-to-text-200) - var(--spectrum-border-width-200));
+  font-size: var(--spectrum-font-size-200);
+}
+
+[data-scale="large"] .spectrum-button--size-large {
+  height: var(--spectrum-component-height-300);
+  padding: 0 calc(var(--spectrum-component-pill-edge-to-text-300) - var(--spectrum-border-width-200));
+  font-size: var(--spectrum-font-size-300);
+}
+
+[data-scale="large"] .spectrum-button--size-extra-large {
+  height: var(--spectrum-component-height-400);
+  padding: 0 calc(var(--spectrum-component-pill-edge-to-text-400) - var(--spectrum-border-width-200));
+  font-size: var(--spectrum-font-size-400);
 } 

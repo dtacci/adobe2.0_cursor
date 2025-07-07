@@ -153,4 +153,23 @@
   background-color: transparent;
   border-color: transparent;
   color: var(--spectrum-disabled-content-color);
+}
+
+/* Scale adjustments */
+[data-scale="large"] .spectrum-actionbutton--size-small {
+  height: var(--spectrum-component-height-200);
+  padding: 0 var(--spectrum-component-edge-to-text-200);
+  font-size: var(--spectrum-font-size-100);
+}
+
+[data-scale="large"] .spectrum-actionbutton--size-medium {
+  height: var(--spectrum-component-height-300);
+  padding: 0 var(--spectrum-component-edge-to-text-300);
+  font-size: var(--spectrum-font-size-200);
+}
+
+[data-scale="large"] .spectrum-actionbutton--size-large {
+  height: var(--spectrum-component-height-400);
+  padding: 0 var(--spectrum-component-edge-to-text-400);
+  font-size: var(--spectrum-font-size-300);
 } 
