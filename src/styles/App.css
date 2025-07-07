@@ -107,18 +107,36 @@ body {
 
 .search-container {
   margin-left: 20px;
-  display: none; /* Hide search bar */
+  display: flex;
+  align-items: center;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  height: 16px;
+  color: var(--storybook-text-muted);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .search-input {
   background-color: var(--storybook-bg);
   border: 1px solid var(--storybook-border);
   border-radius: 4px;
-  padding: 6px 12px;
+  padding: 6px 12px 6px 30px;
   font-size: 13px;
   color: var(--storybook-text);
   width: 240px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  min-width: 200px;
 }
 
 .search-input:focus {
@@ -144,7 +162,8 @@ body {
 }
 
 .control-group.avatar-control {
-  display: none; /* Hide avatar control group */
+  display: flex;
+  align-items: center;
 }
 
 .control-label {
@@ -292,6 +311,14 @@ body {
   background-color: var(--storybook-hover);
   border-left-color: var(--storybook-active);
   color: var(--storybook-active);
+}
+
+.sidebar-no-results {
+  padding: 16px 20px;
+  font-size: 13px;
+  color: var(--storybook-text-muted);
+  text-align: center;
+  font-style: italic;
 }
 
 /* Main Content */
@@ -480,6 +507,10 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .search-container {
+    display: none;
+  }
+  
   .sidebar {
     position: absolute;
     left: 0;
@@ -571,4 +602,155 @@ body {
 
 [data-theme="dark"] .header-avatar:hover {
   background-color: #4a4a4a !important; /* Lighter gray on hover in dark theme */
-} 
+}
+
+/* Getting Started Page Styles */
+.getting-started-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: var(--storybook-sidebar-bg);
+  border-radius: 8px;
+  border: 1px solid var(--storybook-border);
+}
+
+.meta-section h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--storybook-text);
+  margin-bottom: 8px;
+}
+
+.meta-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.meta-section li {
+  font-size: 13px;
+  color: var(--storybook-text-muted);
+  margin-bottom: 4px;
+}
+
+.alert-banner {
+  padding: 16px;
+  background-color: #e3f2fd;
+  border: 1px solid #1976d2;
+  border-radius: 8px;
+  color: #1976d2;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+[data-theme="dark"] .alert-banner {
+  background-color: rgba(25, 118, 210, 0.1);
+  border-color: #1976d2;
+  color: #64b5f6;
+}
+
+.alert-banner a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.time-estimate {
+  padding: 12px 16px;
+  background-color: var(--storybook-sidebar-bg);
+  border-left: 4px solid var(--storybook-active);
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--storybook-text);
+}
+
+.requirements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.requirement-card {
+  padding: 16px;
+  border: 1px solid var(--storybook-border);
+  border-radius: 8px;
+  background-color: var(--storybook-sidebar-bg);
+  text-align: center;
+}
+
+.requirement-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--storybook-text);
+  margin-bottom: 8px;
+}
+
+.requirement-card p {
+  font-size: 13px;
+  color: var(--storybook-text-muted);
+  margin: 0;
+}
+
+.github-section {
+  padding: 20px;
+  background-color: var(--storybook-sidebar-bg);
+  border-radius: 8px;
+  border: 1px solid var(--storybook-border);
+  margin-top: 16px;
+}
+
+.github-section h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--storybook-text);
+  margin-bottom: 12px;
+}
+
+.github-section p {
+  font-size: 14px;
+  color: var(--storybook-text-muted);
+  margin: 0;
+}
+
+.navigation-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--storybook-border);
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-label {
+  font-size: 12px;
+  color: var(--storybook-text-muted);
+  font-weight: 600;
+}
+
+.nav-title {
+  font-size: 14px;
+  color: var(--storybook-text);
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .getting-started-meta {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .requirements-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .navigation-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

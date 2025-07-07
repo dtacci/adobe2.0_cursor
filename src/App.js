@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useParams } from 'rea
 import Sidebar from './components/Sidebar';
 import ComponentView from './components/ComponentView';
 import HomePage from './pages/HomePage';
+import GettingStartedPage from './pages/GettingStartedPage';
 import Avatar from './components/spectrum/Avatar';
 import './styles/spectrum-tokens.css';
 import './styles/App.css';
@@ -44,6 +45,7 @@ function App() {
   const [scale, setScale] = useState('medium');
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [selectedComponent, setSelectedComponent] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
 
   // Apply theme to document root
   useEffect(() => {
@@ -143,12 +145,19 @@ function App() {
               Spectrum Design System
             </a>
             <div className="search-container">
-              <input 
-                type="text"
-                className="search-input"
-                placeholder="Search components..."
-                aria-label="Search components"
-              />
+              <div className="search-input-wrapper">
+                <svg className="search-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+                <input 
+                  type="text"
+                  className="search-input"
+                  placeholder="Search components..."
+                  aria-label="Search components"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+              </div>
             </div>
           </div>
           
@@ -195,11 +204,13 @@ function App() {
             componentData={componentData}
             selectedComponent={selectedComponent}
             onComponentSelect={handleComponentSelect}
+            searchQuery={searchQuery}
           />
           
           <main className="main-content">
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/getting-started" element={<GettingStartedPage />} />
               <Route 
                 path="/component/:componentName" 
                 element={
